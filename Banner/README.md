@@ -13,10 +13,10 @@ score (X.pdf) and possibly an MP3 sound file (X.mp3).
 ## Idea
 
 The musical idea is that each instrument attempts to follow its own
-path, but is subject to contraints by the others.
+path, subject to specified constraints. I have not yet
+attempted to add phrasing or dynamics.
 
 1. **Violin I** plays the melody of the Star Spangled Banner.
 2. **Violin II** plays free counterpoint against the main melody.
-3. **Viola** attempts to fit the other three parts together making some
-   kind of harmonic sense.
+3. **Viola** attempts to fill in the original specified harmony.
 4. **Cello** plays the root of the original harmonic progression.
