@@ -24,7 +24,7 @@ counterpoint. Note that the odd variations are polyphonic and the even
 ones homophonic.
 
 2. This is itself a chaconne, a continuous variation form which was
-another option for the assignment. The chord progression is e-Bb-c-g
+another option for the assignment. The chord progression is e♭-B♭-c-g
 from the theme.
 
 3. I realized when starting this assignment that *Shchedryk* has the
