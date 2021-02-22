@@ -8,7 +8,7 @@
 
 ## Background
 
-This was the a composition assignment for Bellevue College Music
+This was a composition assignment for Bellevue College Music
 211. We were to write five variations given a theme, and one of the
 choices was [Carol of the
 Bells](https://en.wikipedia.org/wiki/Carol_of_the_Bells), a favorite
