@@ -1,0 +1,24 @@
+Pitch collection:
+c) 2e4t
+
+Normal form:      te24
+Best normal form: te24
+Prime form:       0146
+Interval vector:  111111
+
+Transpositions and Inversions
+
+0146 68e0
+1257 57te
+2368 469t
+3479 3589
+458t 2478
+569e 1367
+67t0 0256
+78e1 e145
+8902 t034
+9t13 9e23
+te24 8t12
+e035 7901
+
+
