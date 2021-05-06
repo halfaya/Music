@@ -20,5 +20,3 @@ Transpositions and Inversions
 9t13 9e23
 te24 8t12
 e035 7901
-
-

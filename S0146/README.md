@@ -1,4 +1,4 @@
-# Salsa Caliente del 0146
+# Salsa Caliente de 0146
 
 ## Files
 
