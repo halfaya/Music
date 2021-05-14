@@ -27,8 +27,8 @@ Transformational Pathway
 (T1)     1257
 (I)      57te
 (T2I)    3479
-
 (I)      3589
+
 (T11I)   2368
 (T5I)    9e23
 (I)      9t13
@@ -36,6 +36,7 @@ Transformational Pathway
 (T11I)   458t
 (T6)     te24
 (T8I)    469t
+
 (T3I)    569e
 
 (T11I)   0256
