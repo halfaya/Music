@@ -28,7 +28,6 @@ Transformational Pathway
 (I)      57te
 (T2I)    3479
 (I)      3589
-
 (T11I)   2368
 (T5I)    9e23
 (I)      9t13
@@ -36,18 +35,17 @@ Transformational Pathway
 (T11I)   458t
 (T6)     te24
 (T8I)    469t
-
 (T3I)    569e
-
 (T11I)   0256
 (T6)     68e0
 (T1)     7901
+(T1I)    0146 (7 -> 6, 9 -> 4, 0 -> 1, 1 -> 0)
+
+Didn't have time for (from 7901):
 (T7I)    67t0 / (T3) t034
 (T1)     78e1 / (T1) e145
-
 (T3I/T3) 2478
 (T6)     8t12
 (T10I)   8902
 (T3)     e035
-(T1)     0146
 
