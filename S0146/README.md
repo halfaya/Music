@@ -10,7 +10,7 @@
 ## Background
 
 This was a composition assignment for Bellevue College Music
-212. It is based on the all-interval tetrachord 0146. Inpsired by
+212. It is based on the all-interval tetrachord 0146. Inspired by
 Schoenberg's Opus 24 Serenade and Act 3 Scene 3 of Berg's Wozzeck, the
 idea was to explore atonality in the context of dance rhythms. After
 an introduction, the forms used are the waltz, cha-cha, and
