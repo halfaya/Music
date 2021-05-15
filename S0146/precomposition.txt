@@ -39,7 +39,7 @@ Transformational Pathway
 (T11I)   0256
 (T6)     68e0
 (T1)     7901
-(T1I)    0146 (7 -> 6, 9 -> 4, 0 -> 1, 1 -> 0)
+(T1I)    0146
 
 Didn't have time for (from 7901):
 (T7I)    67t0 / (T3) t034
