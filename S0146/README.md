@@ -15,5 +15,5 @@ Schoenberg's Opus 24 Serenade and Act 3 Scene 3 of Berg's Wozzeck, the
 idea was to explore atonality in the context of dance rhythms. After
 an introduction, the forms used are the waltz, cha-cha, and
 salsa. Rebeca Mauleon's "Salsa Guidebook" and "101 Montunos" were
-valuable references. The song title is from "Salsa Caliente del Japan"
+valuable references. The song title is from "Salsa Caliente del Japon"
 by Orchestra de la Luz.
