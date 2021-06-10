@@ -1,3 +1,23 @@
+.stack-work
 .DS_Store
 .mscbackup
+*.agdai
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.ptb
+*.snm
+*.out
+*.toc
+*.vrb
+*.xcp
+*.bbl
+*.blg
+*.synctex.gz
+MAlonzo
+Main
+
 
