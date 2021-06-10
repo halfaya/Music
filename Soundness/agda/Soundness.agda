@@ -12,13 +12,20 @@ open import Agda.Builtin.Sigma
 open import Data.Bool using (Bool; not; true; false; if_then_else_)
 open import Data.List using (List; []; _∷_; map; concatMap; _++_; foldr)
 open import Data.Fin.Base using (Fin)
+open import Data.Nat.Base using (ℕ)
 open import Data.Unit using (⊤)
+open import Data.Vec using (Vec; []; _∷_)
 
 open import Function using (id)
 
 open import Definition.Conversion.Soundness
 
 open import Interval
+open import Note
+open import MidiEvent using (MidiTrack)
+
+open import Canon     using (makeTrackList)
+open import FarmFugue using (b1; b2; b3; b4; b5; b6; b7; b8; b9; b10; b11; b12; b13)
 
 ----------------
 
@@ -101,6 +108,19 @@ y = getNamesD x
 
 z : List Name
 z = nameSet (quote soundness~↑ ∷ foldr (λ x xs → lhs x ++ rhs x ++ xs) [] y)
+
+
+---------------
+
+music : Vec (List Note) 1
+music = b1 ∷ []
+
+tempo : ℕ
+tempo = 160
+
+soundTracks : List MidiTrack
+soundTracks = makeTrackList tempo music
+
 
 {-
 quote soundness~↑ ∷
