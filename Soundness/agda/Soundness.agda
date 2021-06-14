@@ -106,15 +106,6 @@ topLevelDef sct↓ = getDef soundnessConv↓Term
 topLevelProof : TopLevel → Proof
 topLevelProof = getNamesD ∘ topLevelDef
 
-
-{-
-topLevelNames : List Name
-topLevelNames = map fst topLevel
-
-proofs : List Proof
-proofs = map (λ x → proof (fst x) (getNamesD (snd x))) topLevel
--}
-
 {-# TERMINATING #-}
 proof→notes : ℕ → ℕ → TopLevel → List Note
 line→notes  : ℕ → ℕ → Line → List Note
