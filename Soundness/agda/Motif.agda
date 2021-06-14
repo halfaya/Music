@@ -28,7 +28,7 @@ r = retrograde ∘ p
 ri = retrograde ∘ i
 
 w : Pitch → List Note
-w n = slowDown multiplier (tone whole n) ∷ []
+w n = slowDown multiplier (tone half n) ∷ []
 
 -- All forms adjusted by 
 
@@ -119,17 +119,17 @@ untyped =
   (quote Definition.Untyped.U , w (g 8)) ∷
   (quote Definition.Untyped.Unit , w (a 8)) ∷
   (quote Definition.Untyped._[_] , w (b 8)) ∷
-  (quote Definition.Untyped._[_]↑ , w (c 9)) ∷
-  (quote Definition.Untyped._∘_ , w (d 9)) ∷
-  (quote Definition.Untyped._▹▹_ , w (e 9)) ∷
-  (quote Definition.Untyped.fst , w (f 9)) ∷
-  (quote Definition.Untyped.snd , w (g 9)) ∷
-  (quote Definition.Untyped.suc , w (a 9)) ∷
-  (quote Definition.Untyped.wk1 , w (b 9)) ∷
-  (quote Definition.Untyped.zero , w (c 3)) ∷
-  (quote Definition.Untyped.Π_▹_ , w (d 3)) ∷
-  (quote Definition.Untyped.Σ_▹_ , w (e 3)) ∷
-  (quote Definition.Untyped.ℕ , w (f 3)) ∷
+  (quote Definition.Untyped._[_]↑ , w (c 3)) ∷
+  (quote Definition.Untyped._∘_ , w (d 3)) ∷
+  (quote Definition.Untyped._▹▹_ , w (e 3)) ∷
+  (quote Definition.Untyped.fst , w (f 3)) ∷
+  (quote Definition.Untyped.snd , w (g 3)) ∷
+  (quote Definition.Untyped.suc , w (a 3)) ∷
+  (quote Definition.Untyped.wk1 , w (b 3)) ∷
+  (quote Definition.Untyped.zero , w (c 4)) ∷
+  (quote Definition.Untyped.Π_▹_ , w (d 4)) ∷
+  (quote Definition.Untyped.Σ_▹_ , w (e 4)) ∷
+  (quote Definition.Untyped.ℕ , w (f 4)) ∷
   []
 
 misc : List (Name × List Note)
