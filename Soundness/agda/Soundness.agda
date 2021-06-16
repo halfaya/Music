@@ -4,7 +4,7 @@ module Soundness where
 
 open import Prelude
 
-open import Motif using (motif)
+open import Motif using (motif; levels)
 open import SUtil
 
 ----------------
@@ -106,37 +106,40 @@ topLevelDef sct↓ = getDef soundnessConv↓Term
 topLevelProof : TopLevel → Proof
 topLevelProof = getNamesD ∘ topLevelDef
 
+---------------
+
+-- Number of tracks to create
+tracks : ℕ
+tracks = 4
+
 {-# TERMINATING #-}
 -- First argument n is current level (0 is bottom level; no recursive calls allowed)
 -- Second argument m is exponent for doubling speed (2^m)
-proof→notes : ℕ → ℕ → TopLevel → List Note
-line→notes  : ℕ → ℕ → Line → List Note
-names→notes : ℕ → ℕ → List Name → List Note
+proof→notes : ℕ → ℕ → TopLevel → List (List Note)
+line→notes  : ℕ → ℕ → Line → List (List Note)
+names→notes : ℕ → ℕ → List Name → List (List Note)
 
 -- starts with proof name
-proof→notes n m t =
-  2ⁿSpeed m (motif (topLevelName t))
-  ++ concatMap (line→notes n m) (topLevelProof t)
+proof→notes n m t = 
+  zipFull (2ⁿSpeed m (motif (topLevelName t)) ∷ [])
+  (concatMap (line→notes n m) (topLevelProof t))
 
 -- just use rhs for now
 line→notes n m (line lhs rhs) = names→notes n m rhs
 
-names→notes _    m []         = []
-names→notes zero m ns@(_ ∷ _) = 2ⁿSpeed m (concatMap motif ns)
+names→notes _    m []         = [] ∷ []
+names→notes zero m ns@(_ ∷ _) = 2ⁿSpeed m (concatMap motif ns) ∷ []
 names→notes (suc k) m (n ∷ ns) with isTopLevel n
 ... | just t  = proof→notes k (suc m) t ++ names→notes (suc k) m ns 
-... | nothing = 2ⁿSpeed m (motif n) ++ names→notes (suc k) m ns
+... | nothing = (2ⁿSpeed m (motif n) ∷ []) ++ names→notes (suc k) m ns
 
-proof→notesTop : ℕ → TopLevel → List Note
+proof→notesTop : ℕ → TopLevel → List (List Note)
 proof→notesTop level = proof→notes level 0
 
 ---------------
 
-level : ℕ
-level = 3
-
-music : Vec (List Note) 1
-music = proof→notesTop level s↑ ∷ []
+music : Vec (List Note) tracks
+music = foldIntoVector (proof→notesTop levels s↑)
 
 tempo : ℕ
 tempo = 160

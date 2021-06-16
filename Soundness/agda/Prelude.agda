@@ -12,11 +12,12 @@ open import Agda.Builtin.Sigma public
 open import Data.Bool using (Bool; not; true; false; if_then_else_) public
 open import Data.List using (List; []; _∷_; map; concat; concatMap; _++_; foldr; zip; length) public
 open import Data.Maybe using (Maybe; just; nothing) public
-open import Data.Fin.Base using (Fin) public
-open import Data.Nat.Base using (ℕ; zero; suc) public
+open import Data.Fin.Base using (Fin; toℕ) renaming (zero to fz) public
+open import Data.Nat.Base using (ℕ; zero; suc; _^_) public
+open import Data.Nat.DivMod using (_%_; _mod_) public
 open import Data.Product using (_×_; _,_) public
 open import Data.Unit using (⊤) public
-open import Data.Vec using (Vec; []; _∷_) public
+open import Data.Vec using (Vec; []; _∷_; updateAt) public
 
 open import Function using (id; _∘_; flip) public
 

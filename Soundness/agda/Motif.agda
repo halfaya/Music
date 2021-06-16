@@ -16,9 +16,13 @@ import Definition.Typed.Consequences.Syntactic
 import Definition.Typed.Properties
 import Relation.Binary.PropositionalEquality.Core
 
--- How much to slow down base melody; should be a power of two
+-- Number of levels of recursion
+levels : ℕ
+levels = 2
+
+-- Factor to slow down base melody
 multiplier : ℕ
-multiplier = 8
+multiplier = 2 ^ levels
 
 -- slowed down prime, etc forms
 p i r ri : List Note → List Note
@@ -30,7 +34,7 @@ ri = retrograde ∘ i
 w : Pitch → List Note
 w n = slowDown multiplier (tone half n) ∷ []
 
--- All forms adjusted by 
+-------------
 
 soundness : List (Name × List Note)
 soundness = 
