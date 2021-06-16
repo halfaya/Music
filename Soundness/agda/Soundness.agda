@@ -96,10 +96,10 @@ isTopLevel n =
   else nothing
 
 topLevelDef : TopLevel → Definition
-topLevelDef s↑ = getDef soundness~↑
-topLevelDef s↓ = getDef soundness~↓
-topLevelDef sc↑ = getDef soundnessConv↑
-topLevelDef sc↓ = getDef soundnessConv↓
+topLevelDef s↑   = getDef soundness~↑
+topLevelDef s↓   = getDef soundness~↓
+topLevelDef sc↑  = getDef soundnessConv↑
+topLevelDef sc↓  = getDef soundnessConv↓
 topLevelDef sct↑ = getDef soundnessConv↑Term
 topLevelDef sct↓ = getDef soundnessConv↓Term
 
@@ -107,26 +107,36 @@ topLevelProof : TopLevel → Proof
 topLevelProof = getNamesD ∘ topLevelDef
 
 {-# TERMINATING #-}
+-- First argument n is current level (0 is bottom level; no recursive calls allowed)
+-- Second argument m is exponent for doubling speed (2^m)
 proof→notes : ℕ → ℕ → TopLevel → List Note
 line→notes  : ℕ → ℕ → Line → List Note
 names→notes : ℕ → ℕ → List Name → List Note
 
 -- starts with proof name
-proof→notes n m t = map (iterate m doubleSpeed) (motif (topLevelName t) ++ concatMap (line→notes n m) (topLevelProof t))
+proof→notes n m t =
+  2ⁿSpeed m (motif (topLevelName t))
+  ++ concatMap (line→notes n m) (topLevelProof t)
 
 -- just use rhs for now
 line→notes n m (line lhs rhs) = names→notes n m rhs
 
 names→notes _    m []         = []
-names→notes zero m ns@(_ ∷ _) = map (iterate m doubleSpeed) (concatMap motif ns)
+names→notes zero m ns@(_ ∷ _) = 2ⁿSpeed m (concatMap motif ns)
 names→notes (suc k) m (n ∷ ns) with isTopLevel n
 ... | just t  = proof→notes k (suc m) t ++ names→notes (suc k) m ns 
-... | nothing = map (iterate m doubleSpeed) (motif n) ++ names→notes (suc k) m ns 
+... | nothing = 2ⁿSpeed m (motif n) ++ names→notes (suc k) m ns
+
+proof→notesTop : ℕ → TopLevel → List Note
+proof→notesTop level = proof→notes level 0
 
 ---------------
 
+level : ℕ
+level = 3
+
 music : Vec (List Note) 1
-music = proof→notes 3 0 s↑ ∷ []
+music = proof→notesTop level s↑ ∷ []
 
 tempo : ℕ
 tempo = 160

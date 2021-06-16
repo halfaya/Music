@@ -34,20 +34,20 @@ w n = slowDown multiplier (tone half n) ∷ []
 
 soundness : List (Name × List Note)
 soundness = 
-  (quote soundness~↑ , p b1) ∷
-  (quote soundness~↓ , i b1) ∷
-  (quote soundnessConv↑ , p b2) ∷
-  (quote soundnessConv↓ , i b2) ∷
-  (quote soundnessConv↑Term , p b3) ∷
-  (quote soundnessConv↓Term , i b3) ∷
+  (quote soundness~↑ , p subject) ∷
+  (quote soundness~↓ , i subject) ∷
+  (quote soundnessConv↑ , p countersubject) ∷
+  (quote soundnessConv↓ , i countersubject) ∷
+  (quote soundnessConv↑Term , p extra) ∷
+  (quote soundnessConv↓Term , i extra) ∷
   []
 
 conversion : List (Name × List Note)
 conversion =
-  (quote Definition.Conversion.Whnf.ne~↓ , ri subject) ∷
-  (quote Definition.Conversion.[~] , r subject) ∷
-  (quote Definition.Conversion.[↑] , p subject) ∷
-  (quote Definition.Conversion.[↑] , i subject) ∷
+  (quote Definition.Conversion.Whnf.ne~↓ , ri canonsubject) ∷
+  (quote Definition.Conversion.[~] , r canonsubject) ∷
+  (quote Definition.Conversion.[↑] , p canonsubject) ∷
+  (quote Definition.Conversion.[↑] , i canonsubject) ∷
 
   (quote Definition.Conversion._⊢_[conv↓]_.Empty-refl , p b4) ∷
   (quote Definition.Conversion._⊢_[conv↓]_.U-refl , i b4) ∷

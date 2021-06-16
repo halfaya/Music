@@ -22,3 +22,6 @@ nameSet = foldr insert []
 iterate : {A : Type} → ℕ → (A → A) → A → A
 iterate zero    f x = x
 iterate (suc k) f x = iterate k f (f x)
+
+2ⁿSpeed : ℕ → List Note → List Note
+2ⁿSpeed n = map (iterate n doubleSpeed)
