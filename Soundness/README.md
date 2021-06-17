@@ -33,7 +33,7 @@ To build requires the following dependencies, with all Agda libraries installed
 * [MusicTools](https://github.com/halfaya/MusicTools) latest version
 * [agda-stdlib](https://github.com/agda/agda-stdlib) matching the Agda version
 * [cubical](https://github.com/agda/cubical) matching the Agda version
-* [logrel-mtt](https://github.com/mr-ohman/logrel-mltt) I'm using a version whose latest commit is Feb 22, 2021, but
+* [logrel-mltt](https://github.com/mr-ohman/logrel-mltt) I'm using a version whose latest commit is Feb 22, 2021, but
   other versions probably work. Note that I had to add the line `name: logrel-mltt` to `logrel-mltt.agda-lib` to
   make it work properly as a library.
 
