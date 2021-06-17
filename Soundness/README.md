@@ -16,11 +16,13 @@ This was the final composition assignment for Bellevue College Music
 
 
 Brief notes on the versions created so far follow. Each can be recreated by pulling the appropriate
-"version `N`" commit from github.
+"version `N`" commit from github. You may need to pull an older version of MusicTools from the same
+time as well.
 
 1. Single line piano, 3 levels of recursion. Had a bug in which speed was doubled far more often than intended.
 2. Single line piano, 3 levels of recursion. Fixed the bug from version 1 and made other small changes.
 3. Four line piano, 2 levels of recursion. Lines are folded together not following the proof structure.
+4. Four line piano/organ, 2 levels of recursion. Version 3 for two pianos and two organs.
 
 ## Instructions
 

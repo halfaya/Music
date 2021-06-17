@@ -28,8 +28,7 @@ open import Note public
 open import Pitch  using (Pitch; a; b; c; d; e; f; g) public
 open import Transformation public
 
-open import Canon     using (makeTrackList) public
-open import MidiEvent using (MidiTrack) public
+open import MidiEvent using (InstrumentNumber-1; maxChannels; MidiTrack) public
 
 open import FarmCanon using () renaming (subject to canonsubject) public
 open import FarmFugue using (b1; b2; b3; b4; b5; b6; b7; b8; b9; b10; b11; b12; b13; subject; countersubject; extra) public

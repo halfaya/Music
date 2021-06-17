@@ -4,6 +4,8 @@ module Soundness where
 
 open import Prelude
 
+open import Instruments
+open import MakeTracks using (makeTrackList)
 open import Motif using (motif; levels)
 open import SUtil
 
@@ -138,6 +140,26 @@ proof→notesTop level = proof→notes level 0
 
 ---------------
 
+instruments : Vec InstrumentNumber-1 maxChannels
+instruments =
+  drawbarOrgan ∷ -- 1
+  piano ∷ -- 2
+  electricPiano1 ∷ -- 3
+  churchOrgan ∷ -- 4
+  piano ∷ -- 5
+  piano ∷ -- 6
+  piano ∷ -- 7
+  piano ∷ -- 8
+  piano ∷ -- 9
+  drums ∷ -- 10 (percussion)
+  piano ∷ -- 11
+  piano ∷ -- 12
+  piano ∷ -- 13
+  piano ∷ -- 14
+  piano ∷ -- 15
+  piano ∷ -- 16
+  []
+
 music : Vec (List Note) tracks
 music = foldIntoVector (proof→notesTop levels s↑)
 
@@ -145,4 +167,4 @@ tempo : ℕ
 tempo = 160
 
 soundTracks : List MidiTrack
-soundTracks = makeTrackList tempo music
+soundTracks = makeTrackList instruments tempo music
