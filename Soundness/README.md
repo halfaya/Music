@@ -28,8 +28,8 @@ time as well.
 
 To build requires the following dependencies, with all Agda libraries installed
 [locally](https://agda.readthedocs.io/en/latest/tools/package-system.html).
-* [Agda](https://github.com/agda/agda) post-2.6.2, supporting `--erased-cubical`
-* [GHC](https://www.haskell.org/ghc/) I am using 8.10.2, but other versions likely work.
+* [Agda](https://github.com/agda/agda) 2.6.3, supporting `--erased-cubical`
+* [GHC](https://www.haskell.org/ghc/) I am using 8.10.5, but other versions likely work.
 * [MusicTools](https://github.com/halfaya/MusicTools) latest version
 * [agda-stdlib](https://github.com/agda/agda-stdlib) matching the Agda version
 * [cubical](https://github.com/agda/cubical) matching the Agda version

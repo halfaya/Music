@@ -6,6 +6,8 @@ open import Prelude
 
 open import SUtil using (lookup)
 
+open import Yamanote using (counterp)
+
 import Definition.Conversion
 import Definition.Conversion.Whnf
 import Definition.Typed
@@ -36,12 +38,17 @@ w n = slowDown multiplier (tone half n) ∷ []
 
 -------------
 
+yamanoteCP : List Note
+yamanoteCP = map (transposeNote (-[1+ 7 ]) ∘ slowDown 2) counterp
+
+-------------
+
 soundness : List (Name × List Note)
 soundness = 
-  (quote soundness~↑ , p subject) ∷
-  (quote soundness~↓ , i subject) ∷
-  (quote soundnessConv↑ , p countersubject) ∷
-  (quote soundnessConv↓ , i countersubject) ∷
+  (quote soundness~↑ , p yamanoteCP) ∷
+  (quote soundness~↓ , i yamanoteCP) ∷
+  (quote soundnessConv↑ , p subject) ∷
+  (quote soundnessConv↓ , i subject) ∷
   (quote soundnessConv↑Term , p extra) ∷
   (quote soundnessConv↓Term , i extra) ∷
   []
