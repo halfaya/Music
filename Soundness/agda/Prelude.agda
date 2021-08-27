@@ -10,7 +10,7 @@ open import Agda.Builtin.String public
 open import Agda.Builtin.Sigma public
 
 open import Data.Bool using (Bool; not; true; false; if_then_else_) public
-open import Data.List using (List; []; _∷_; map; concat; concatMap; _++_; foldr; zip; length) public
+open import Data.List using (List; []; _∷_; map; concat; concatMap; _++_; foldr; zip; length; take) public
 open import Data.Maybe using (Maybe; just; nothing) public
 open import Data.Fin.Base using (Fin; toℕ) renaming (zero to fz) public
 open import Data.Integer.Base using (ℤ; +_; -[1+_]) public
@@ -26,7 +26,7 @@ open import Definition.Conversion.Soundness public
 
 open import Interval public
 open import Note public
-open import Pitch  using (Pitch; a; b; c; d; e; f; g) public
+open import Pitch using (Pitch; a; b; b♭; c; c♯; d; d♯; e; f; f♯; g; g♯) public
 open import Transformation public
 
 open import MidiEvent using (InstrumentNumber-1; maxChannels; MidiTrack) public

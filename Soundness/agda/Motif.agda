@@ -38,19 +38,53 @@ w n = slowDown multiplier (tone half n) ∷ []
 
 -------------
 
+-- Hexachords from P10 of ICFP 2020 micro-opera.
+i20p10a i20p10b i20coda : List Note
+
+i20p10a = 
+  tone 8th  (b♭ 4) ∷
+  tone 8th  (b♭ 4) ∷
+  tone 8th  (a  4) ∷
+  tone 8th  (g  4) ∷
+  tone qtr  (c  5) ∷
+  tone qtr  (d  5) ∷
+  tone half (c♯ 5) ∷
+  []
+
+i20p10b = 
+  tone qtr  (b  4) ∷
+  tone 9    (e  5) ∷
+  tone 8th  (f♯ 4) ∷
+  tone 8th  (f  4) ∷
+  tone 8th  (d♯ 4) ∷
+  tone half (g♯ 5) ∷
+  []
+
+i20coda = 
+  tone 8th   (a 5) ∷
+  tone 8th   (f 5) ∷
+  tone 8th   (f 5) ∷
+  tone 8th   (a 5) ∷
+  tone 8th   (c 6) ∷
+  tone whole (f 6) ∷
+  []
+
+-------------
+
+-- first 8 notes of Yamanote counterpoint transposed to F
 yamanoteCP : List Note
-yamanoteCP = map (transposeNote (-[1+ 7 ]) ∘ slowDown 2) counterp
+yamanoteCP = map (transposeNote (-[1+ 7 ]) ∘ slowDown 2) (take 8 counterp)
 
 -------------
 
 soundness : List (Name × List Note)
 soundness = 
-  (quote soundness~↑ , p yamanoteCP) ∷
-  (quote soundness~↓ , i yamanoteCP) ∷
+  (quote soundness~↑ , p i20p10a) ∷
+  (quote soundness~↓ , i i20p10a) ∷
   (quote soundnessConv↑ , p subject) ∷
   (quote soundnessConv↓ , i subject) ∷
-  (quote soundnessConv↑Term , p extra) ∷
-  (quote soundnessConv↓Term , i extra) ∷
+  (quote soundnessConv↑Term , p yamanoteCP) ∷
+  (quote soundnessConv↓Term , i yamanoteCP) ∷
   []
 
 conversion : List (Name × List Note)
@@ -93,18 +127,18 @@ typed =
   (quote Definition.Typed.Consequences.Syntactic.syntacticEqTerm , i b10) ∷
   (quote Definition.Typed.Consequences.Syntactic.syntacticTerm , r b10) ∷
   (quote Definition.Typed.Consequences.Syntactic.syntacticΠ , ri b10) ∷
-  (quote Definition.Typed.Consequences.Syntactic.syntacticΣ , p b11) ∷
-  (quote Definition.Typed.Properties.subset* , i b11) ∷
-  (quote Definition.Typed.Properties.subset*Term , r b11) ∷
-  (quote Definition.Typed._⊢_.Emptyⱼ , ri b11) ∷
-  (quote Definition.Typed._⊢_.Unitⱼ , p b12) ∷
-  (quote Definition.Typed._⊢_.Uⱼ , i b12) ∷
-  (quote Definition.Typed._⊢_.ℕⱼ , r b12) ∷
-  (quote Definition.Typed._⊢_∷_.zeroⱼ , ri b12) ∷
-  (quote Definition.Typed._⊢_≡_.refl , p b13) ∷
-  (quote Definition.Typed._⊢_≡_.sym , i b13) ∷
-  (quote Definition.Typed._⊢_≡_.trans , r b13) ∷
-  (quote Definition.Typed._⊢_≡_.univ , ri b13) ∷
+  (quote Definition.Typed.Consequences.Syntactic.syntacticΣ , p b1) ∷
+  (quote Definition.Typed.Properties.subset* , i b1) ∷
+  (quote Definition.Typed.Properties.subset*Term , r b1) ∷
+  (quote Definition.Typed._⊢_.Emptyⱼ , ri b1) ∷
+  (quote Definition.Typed._⊢_.Unitⱼ , p b2) ∷
+  (quote Definition.Typed._⊢_.Uⱼ , i b2) ∷
+  (quote Definition.Typed._⊢_.ℕⱼ , r b2) ∷
+  (quote Definition.Typed._⊢_∷_.zeroⱼ , ri b2) ∷
+  (quote Definition.Typed._⊢_≡_.refl , p b3) ∷
+  (quote Definition.Typed._⊢_≡_.sym , i b3) ∷
+  (quote Definition.Typed._⊢_≡_.trans , r b3) ∷
+  (quote Definition.Typed._⊢_≡_.univ , ri b3) ∷
   (quote Definition.Typed._⊢_≡_.Π-cong , w (c 6)) ∷
   (quote Definition.Typed._⊢_≡_.Σ-cong , w (d 6)) ∷
   (quote Definition.Typed._⊢_≡_∷_.Emptyrec-cong , w (e 6)) ∷

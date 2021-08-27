@@ -23,6 +23,7 @@ time as well.
 2. Single line piano, 3 levels of recursion. Fixed the bug from version 1 and made other small changes.
 3. Four line piano, 2 levels of recursion. Lines are folded together not following the proof structure.
 4. Four line piano/organ, 2 levels of recursion. Version 3 for two pianos and two organs.
+5. (FARM 2021) Four line piano/organ, 2 levels of recursion. Version 4 with some new motives.
 
 ## Instructions
 
